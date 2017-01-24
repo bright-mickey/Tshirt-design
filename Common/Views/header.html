@@ -1,0 +1,84 @@
+<header id="header">
+	<div class="container">
+		<div class="logo">
+			<a href="https://www.teedesign.ae">
+				<img src="images/logo2.png" height="40" width="175" alt="teedesign">
+			</a>
+		</div>
+		<div class="header-content">
+			<div class="search-area">
+				<ul class="sub-nav">
+					<li><a href='{{serverURL}}track'>Track Your Order</a></li>
+					<li><a href='{{serverURL}}login' ng-if="!vm.user.id">Log In</a></li>
+					<li class="">
+						<!--<a href="" class="open">{{vm.user.name || "NOT LOGGED IN"}}</a>
+						<div class="drop-down">
+							<ul class="list">
+								<li><a href="#">link01</a></li>
+								<li><a href="#">link02</a></li>
+								<li><a href="#">link03</a></li>
+								<li><a href="#">link04</a></li>
+							</ul>
+							<a href="#" class="logout">Logout</a>
+						</div>-->
+
+						<div class="dropdown" style="cursor:pointer;" ng-if="vm.user.id">
+							<span class=" dropdown-toggle" type="button" data-toggle="dropdown">{{vm.user.name}} <span class="caret"></span></span>
+							<ul class="dropdown-menu">
+								<li ng-repeat="page in vm.user.pages"><a href='{{serverURL}}{{page.url}}'> {{page.title}} </a></li>
+									<li><a href='{{serverURL}}logout'> Logout </a></li>
+							</ul>
+						</div>
+
+					</li>
+				</ul>
+
+
+
+
+
+				<form ng-submit="vm.search_tees()" class="search-form">
+					<fieldset>
+						<button type="submit"><i class="icon-search"  ng-click="vm.search_tees()" ></i></button>
+						<div class="input-holder">
+							<input type="search" placeholder="Search for Tees" ng-model="vm.tee_search_name">
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="breadcrumbs-row">
+	<div class="container">
+	<div class="row"> 
+	<div class="col-sm-10"> 
+
+	<ol class="breadcrumbs">
+			<li ui-sref-active="active" ui-sref="home.create"><a href="">Design</a></li>
+			<li ui-sref-active="active" ui-sref="home.goal"><a href="">Campaign Target</a></li>
+			<li ui-sref-active="active" ui-sref="home.description"><a href="">Campaign Details</a></li>
+		</ol>
+
+	</div>
+	<div class="col-sm-2"> 
+	
+	<span class="selling-price">
+							
+							<div class="price-info">
+								<span class="icon" ng-click="toggleCheats()"><i class="icon-information" style="font-size:15pt;color: red;"></i></span>
+								<div class="info-holder">
+									<div class="info-frame" style="font-size:10pt;z-index: 111;">
+										<p>Shortcuts menu</p>
+									</div>
+								</div>
+							</div>
+						</span>
+
+	</div>
+
+	</div>
+		
+
+	</div>
+</div>

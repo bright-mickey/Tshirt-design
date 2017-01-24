@@ -1,0 +1,13 @@
+<div id="fontStyle">
+    <div class="select-area" style="padding: 0 0 10px 0;">
+        <span class="fake-list">
+            <select ng-model="vm.category" ng-change="vm.fontChanged(vm.category)" ng-options="fontList as fontList for fontList in vm.uniqFontTags">
+               <option value="">--All Fonts--</option>
+            </select>
+        </span>
+    </div>
+    <ul class="fontoption">
+        <li  ng-repeat="font in vm.fonts | limitTo:50 | filter :{category:vm.category}" ng-click="vm.fontSelection(font);$hide()"><span webfont-loader="{{font.family}}"   ng-style="{'font-family':font.family}">{{font.family}}</span></li>
+    </ul>
+</div>
+

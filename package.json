@@ -1,0 +1,34 @@
+{
+    "name": "Designee",
+    "version": "0.0.1",
+    "author": "Abdul Basit a.k.a The Genius",
+    "private": true,
+    "devDependencies": {
+        "bower": "~1.4.1",
+        "grunt": "~0.4.*",
+        "matchdep": "*",
+        "grunt-css": "^0.5.4",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-concat": "^0.5.1",
+        "grunt-contrib-cssmin": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-qunit": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-watch": "~0.6.1",
+        "grunt-contrib-copy": "~0.8.0"
+    },
+    "dependencies": {
+        "bower": "~1.4.1",
+        "grunt": "~0.4.5",
+        "matchdep": "~0.3.0",
+        "grunt-css": "~0.5.4",
+        "grunt-contrib-clean": "~0.6.0",
+        "grunt-contrib-concat": "~0.5.1",
+        "grunt-contrib-cssmin": "~0.12.3",
+        "grunt-contrib-jshint": "~0.11.2",
+        "grunt-contrib-qunit": "~0.7.0",
+        "grunt-contrib-uglify": "~0.9.1",
+        "grunt-contrib-watch": "~0.6.1",
+        "grunt-contrib-copy": "~0.8.0"
+    }
+}

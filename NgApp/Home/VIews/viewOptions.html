@@ -1,0 +1,84 @@
+<div class="modal am-fade-and-scale" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;" ng-init="vm.prepare_shirts()">
+    <div class="modal-dialog" style="width: 35%;max-height: 600px;overflow: auto">
+        <div class="modal-content">
+            <div class="modal-header ng-hide" ng-show="title">
+                <button type="button" class="close" aria-label="Close" ng-click="$hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title ng-binding" ng-bind="title"></h4>
+            </div>
+            <div class="modal-body">
+
+                <ul class="products-list">
+									<li ng-repeat="shirt in vm.shirts_in_styles" ng-click="vm.select_extra_shirt_colors(shirt)" >
+										<a href="">
+											<div class="image">
+												<img ng-style="shirt.name==='Baby Bibs' && {'height':'59.43px'}" image-spinner ng-src={{vm.imageURL}}{{shirt.front_small}}
+													width="50" height="50" alt="image description" >
+											</div>
+											<span class="product-text">{{shirt.name}}</span>
+                                            <div class="row">
+
+                            <div class=""> <i class="fa fa-toggle-on bring-to-center" style="color:red;margin-left:60%;" ng-if="shirt.selected"> </i> </div>
+                            <div class=""> <i class="fa fa-toggle-off  bring-to-center" style="margin-left:60%;" ng-if="!shirt.selected"> </i> </div>
+
+                                      </div>
+										</a>
+									</li>
+
+								</ul>
+
+
+                <div class="row col-sm-offset-1" ng-if="false">
+                    <div class="col-sm-2 col-md-2 unit_shirt" ng-repeat="shirt in vm.shirts_in_styles" ng-click="vm.select_extra_shirt_colors(shirt)"  ng-if="vm.is_available(shirt)">
+                        <div class="row">
+                            <img ng-src={{vm.imageURL}}{{shirt.front_small}} width="50" height="50" alt="image description">
+                        </div>
+                        <div class="row">
+                            <div class="modal-product-text"> {{shirt.name}} </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="text-center"> <i class="fa fa-toggle-on bring-to-center" style="color:red;" ng-if="shirt.selected"> </i> </div>
+                            <div class="text-center"> <i class="fa fa-toggle-off  bring-to-center " ng-if="!shirt.selected"> </i> </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal-shirts" ng-if="false">
+                    <ul class="">
+                        <li ng-repeat="shirt in vm.shirts_in_styles" ng-if="vm.is_available(shirt)">
+
+                            <div class="modal-image-holder">
+                                <img ng-src={{vm.imageURL}}{{shirt.image_front_url}} width="50" height="50" alt="image description">
+                                <div class="text-center"> <i class="fa fa-toggle-on bring-to-center" style="color:red;" ng-if="shirt.selected"> </i>  </div>
+                                <div class="text-center"> <i class="fa fa-toggle-off  bring-to-center" ng-if="!shirt.selected"> </i> </div>
+                                <div class="modal-product-text"> {{shirt.name}} </div>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+
+
+
+
+                <div class="row text-center animate-repeat" ng-if="vm.total_color_selected<15">
+                    <h5>
+                        You can add {{15-vm.total_color_selected}} more apparel(s).
+                    </h5>
+                </div>
+                <div class="row text-center animate-repeat" ng-if="vm.total_color_selected==15">
+                    <h5>
+                        You've just hit the maximum limit of apparels, you cannot add anymore apparel(s).
+
+                    </h5>
+                </div>
+                <div class="row text-center" style="padding:5px;"> <button class="btn btn-primary btn-lg" ng-click="$hide()"> OK </button> </div>
+            </div>
+        </div>
+    </div>
+</div>

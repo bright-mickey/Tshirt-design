@@ -1,0 +1,41 @@
+<div class="modal am-fade-and-scale" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+	<div class="modal-dialog" style="width: 35%;max-height: 600px;overflow: auto">
+		<div class="modal-content">
+
+			<div class="modal-body">
+				<div id="popup3">
+					<div class="lightbox">
+						<form name="sign_up_form" class="signup-form">
+							<fieldset>
+								<h2>Create an account with teedesign</h2>
+								<input type="text" class="form-control" placeholder="First Name" ng-model="vm.sign_up.first_name" required>
+								<input type="text" class="form-control" placeholder="Last Name" ng-model="vm.sign_up.last_name" required>
+
+								<input type="email" class="form-control" placeholder="Email" ng-model="vm.sign_up.email" required>
+								<input type="password" class="form-control" placeholder="Password: Must be longer than 6 characters." ng-model="vm.sign_up.password" required>
+								<input type="password" class="form-control" placeholder="Confirm Password" ng-model="vm.sign_up.password_confirmation" required>
+
+								<select class="form-control" name="question" ng-model="vm.sign_up.question" required>
+               						<option value="0" disabled="" selected="">Select Secret Question</option>
+                                    <option value="1">What is your favourite Book/Novel?</option>
+                                    <option value="2">Who is your favourite Artist?</option>
+                                    <option value="3">Which primary school did you attend?</option>
+                                    <option value="4">What is your ideal holiday destination?</option>
+                            </select>
+							<input type="text" class="form-control" placeholder="Answer" ng-model="vm.sign_up.answer" required>
+								<span class="indent"><button class="btn btn-danger btn-lg" type="submit" ng-disabled="sign_up_form.$invalid || vm.sign_up.password!=vm.sign_up.password_confirmation" ng-click="vm.register_user();">Create your account <span>»</span></button>
+								</span>
+								<p>By creating your account, you agree to our <a href="#">privacy policy</a>. You also agree to receive very occasional
+									periodic email updates from us (no spam, we promise!) </p>
+								<span class="indent"><a class="link lightbox-opener" ng-click="show_login_form()" style="cursor:pointer;">Already have an account?</a></span>
+							</fieldset>
+						</form>
+						<a href="#" class="close"><i class="icon-cross-01"></i></a>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>

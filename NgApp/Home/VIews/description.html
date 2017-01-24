@@ -1,0 +1,222 @@
+<main id="main" role="main" class="animated lightSpeedIn">
+	
+	<div class="container">
+		<div class="goal-block">
+			<div class="shirt-info" style="display:none;">
+				<div class="shirt-tabs tabs">
+					<div class="shirt-box">
+						<div class="shirt-view">
+							<div class="tab-content">
+								<div id="tab1">
+									<div class="shirt-picture">
+										<img src="images/img01.png" width="515" height="533" alt="image description">
+									</div>
+								</div>
+								<div id="tab2">
+									<div class="shirt-picture">
+										<img src="images/img02.png" width="515" height="533" alt="image description">
+									</div>
+								</div>
+								<div id="tab3">
+									<div class="shirt-picture">
+										<img src="images/img03.png" width="515" height="533" alt="image description">
+									</div>
+								</div>
+								<div id="tab4">
+									<div class="shirt-picture">
+										<img src="images/img04.png" width="515" height="533" alt="image description">
+									</div>
+								</div>
+							</div> 
+							<div class="printable-holder">
+								<div class="printable-area">
+									<div class="graphic-image">
+										<img src="images/img11.png" width="161" height="121" alt="image description">
+									</div>
+									<span class="visual-text">11.9” x 17.9” Printable Area</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="paging-area">
+						<ul class="tabset shirt-tabset">
+							<li>
+								<a href="#tab1" class="active"><img src="images/img05.png" width="48" height="48" alt="image description"></a>
+							</li>
+							<li>
+								<a href="#tab2"><img src="images/img06.png" width="48" height="48" alt="image description"></a>
+							</li>
+							<li>
+								<a href="#tab3"><img src="images/img07.png" width="48" height="48" alt="image description"></a>
+							</li>
+							<li>
+								<a href="#tab4"><img src="images/img08.png" width="48" height="48" alt="image description"></a>
+							</li>
+						</ul>
+						<a href="#" class="hide-link">Hide Printable Area</a>
+					</div>
+					<a href="#popup1" class="btn-default lightbox-opener" >Launch</a>
+				</div>
+			</div>
+			<form name="launch_form" class="compaign-form">
+				<fieldset>
+					<div class="field-item">
+						<label class="title" for="compaign"><span class="red_item"> * </span> Name your Campaign</label>
+						
+						<input maxlength="50" type="text" id="compaign" ng-model="vm.compaign_title" ng-change="vm.build_url()" required>
+						
+					</div>
+					<div class="field-item">
+						<div class="head">
+							<strong class="title about_campaign">What's your Campaign about?</strong>
+							<ul class="select-option" style="display:none;">
+								<li><a class="bold" href="#">B</a></li>
+								<li><a class="italic" href="#">I</a></li>
+								<li><a class="underline" href="#">U</a></li>
+								<li><a class="link" href="#"><i class="icon-link"></i></a></li>
+								<li><a class="image" href="#"><i class="icon-image"></i></a></li>
+							</ul>
+						</div>
+						<textarea maxlength="1000" name="htmlcontent" ng-model="$parent.desc" ng-focus="vm.show_toolbar()" ng-blur="vm.hide_toolbar()"> </textarea>
+							
+					</div>
+					<div class="field-item">
+						<strong class="title"> <span class="red_item"> * </span>Categories</strong>
+					
+						<span class="fake-list color">
+									<select ng-options="category.id as category.name for category in vm.categories" id="category" ng-model="vm.description.category" required>
+									
+									</select>
+								</span>
+					</div>
+					<div class="field-item">
+						<strong class="title">Tag It!</strong>
+						<p>Its best to add upto 5 tags to improve your campaign visibility</p>
+						<div class="auto-complete">
+
+							<div class="field-holder">
+								<input type="text" maxlength="20" placeholder="Separate tags with Enter or comma" ng-model="vm.raw_tags" ng-keyup="vm.extract_tags($event)" ng-blur="vm.extract_tag_on_blur($event)">
+							</div>
+						</div>
+					</div>
+					<!--<div class="field-item">
+						<strong class="tag" ng-repeat="tag in vm.tags track by $index">{{tag}} <button type="button" class="close" aria-label="Close" style="position:relative;left:10%;" ng-click="vm.remove_tag($index)">
+                    <span aria-hidden="true">×</span>
+                </button> </strong>
+
+					</div>-->
+					<div class="field-item"  ng-repeat="tag in vm.tags track by $index"> 
+						<span class="tag-token">
+						<span class="">{{tag}}</span>
+						<a class="remove_tag" href="" role="button" aria-label="Remove Abdul Basit" title="Remove" ng-click="vm.remove_tag($index)"> <span class="fa fa-close remove_tag_btn">  </span> </a></span> 
+						</div>
+		</div>
+		<div class="field-item" style="margin-bottom: .5em;">
+			<strong class="title_url"> <span class="red_item"> * </span> Campaign Duration</strong>
+			<span class="fake-list add">
+				
+									<select ng-model="vm.compaign_length" id="campaign_length" name="campaign_length" required>
+							            <option ng-repeat="day in vm.time_array" ng-if="$index+7 == 7 || $index+7 == 11 || $index+7 == 21 || $index+7 == 17" value="{{$index+7}}"> {{$index+7}} Days ({{day | date: 'fullDate'}}) </option>
+                                    </select>
+								</span>
+		</div>
+		
+		<div class="field-item">
+			<label for="url" class="title_url"><span class="red_item"> * </span>URL</label>
+			<p>People can view your campaign through this unique URL </p>
+			<div class="url-box">
+				<strong class="url-name">teedesign.ae/</strong>
+				<div class="input-holder">
+					<input type="text" id="url" class="url" name="url" ng-model="vm.url" ng-change="vm.validate_url()" required>
+				</div>
+			</div>
+			
+		</div>
+		<div class="field-item">
+						<span ng-if="vm.url_available && !vm.is_loading_url"> URL is available </span>
+						<span ng-if="!vm.url_available && !vm.is_loading_url"> Unfortunately, URL is unavaiable, please try changing URL. </span>
+						<span ng-if="vm.is_loading_url"> Verifying URL </span>
+							
+					</div>
+		<div class="field-item" style="display:none;">
+			<strong class="title">Shipping Options</strong>
+			<label class="custom-checkbox">
+									<input type="checkbox">
+									<span class="fake-input"></span>
+									<span class="label-text">Allow buyers to pick up their orders from you Please note pick-up is <br>currently only available to US Addresses.</span>
+								</label>
+			<div class="shipping-options">
+				<div class="field-row">
+					<div class="col">
+						<label for="order" class="sub-title">Where/when will buyers be able to pick up their orders?</label>
+						<div class="input-field">
+							<input type="text" id="order">
+							<span class="icon"></span>
+						</div>
+						<span class="sub-info">Buyers will see these instructions when choosing between shipping/pick-up</span>
+					</div>
+				</div>
+				<div class="field-row two">
+					<div class="col">
+						<label for="f-name" class="sub-title">First Name</label>
+						<input type="text" id="f-name">
+					</div>
+					<div class="col">
+						<label for="l-name" class="sub-title">Last Name</label>
+						<input type="text" id="l-name">
+					</div>
+				</div>
+				<div class="field-row">
+					<div class="col">
+						<label for="address" class="sub-title">Pick-up Shipping Address</label>
+						<input type="text" id="address">
+					</div>
+					<div class="col">
+						<input type="text">
+					</div>
+				</div>
+				<div class="field-row two">
+					<div class="col">
+						<label for="city" class="sub-title">City</label>
+						<input type="text" id="city">
+					</div>
+					<div class="col">
+						<div class="sub-col-row">
+							<div class="sub-col">
+								<label class="sub-title">State</label>
+								<span class="fake-list add">
+														<select>
+															<option>AK</option>
+															<option>AK</option>
+															<option>AK</option>
+															<option>AK</option>
+															<option>AK</option>
+															<option>AK</option>
+														</select>
+													</span>
+							</div>
+							<div class="sub-col">
+								<label for="z-code" class="sub-title">Zip Code</label>
+								<input type="text" id="z-code">
+							</div>
+						</div>
+					</div>
+				</div>
+				<span class="sub-info add">Please note pick-up is currently only available to US Addresses.</span>
+			</div>
+		</div>
+		<div class="field-item" style="display:none;">
+			<strong class="title">Display Options</strong>
+			<label class="custom-checkbox">
+									<input type="checkbox">
+									<span class="fake-input"></span>
+									<span class="label-text">Show the back side by default</span>
+								</label>
+		</div>
+		</fieldset>
+		</form>
+	</div>
+	</div>
+	<div class="row text-center"> NOTE: Fields marked with <span class="red_item"> * </span> are required. </div>
+	<div class="row text-center"> <button ng-disabled="launch_form.$invalid || !(vm.url.length) || !(vm.compaign_length.length)" class="btn btn-danger btn-lg form-group" ui-sref="home.description" style="margin-top:2%;" ng-click="vm.launch_compaign()">  LAUNCH </button> </div>
+</main>

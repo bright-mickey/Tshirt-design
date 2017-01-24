@@ -1,0 +1,40 @@
+<div class="modal am-fade-and-scale" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog" style="width: 35%;max-height: 600px;overflow: auto">
+        <div class="modal-content">
+           
+            <div class="modal-body">
+                <div id="popup2">
+			<div class="lightbox">
+				<form class="login-form">
+					<fieldset>
+						<h2>Login with teedesign</h2>
+						<input type="email" class="form-control" placeholder="Email" ng-model="vm.loginCred.email">
+						<input type="password" class="form-control" placeholder="Password" ng-model="vm.loginCred.password">
+						<span class="indent"><a href="{{serverURL}}recover" class="link">Forgot your password?</a></span>
+						<span class="indent"><button class="btn btn-danger btn-lg" type="submit" ng-disabled="login-form.$invalid" ng-click="vm.login()">Login to your account <span>»</span></button></span>
+						<div class="row text-center indent" style="font-size: 16pt;">  Or login using </div>
+						<div class="indent">
+						<div class=""> 
+
+						<button fb-login type="button" class="btn btn-primary" style="width: 25%;"><i class="fa fa-facebook-official"></i> Facebook</button>
+						<button g-login type="button" class="btn btn-danger" style="width: 25%;"> <i class="fa fa-google"> </i> Google+</button>
+
+						</div>
+
+						
+
+						</div>
+						
+						<span class="indent"><a href="" class="link lightbox-opener" ng-click="show_signUpForm()">Want to create a new account?</a></span>
+
+					</fieldset>
+				</form>
+				<a href="#" class="close"><i class="icon-cross-01" ng-click="$hide()"></i></a>
+			</div>
+		</div>
+                
+               
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,48 @@
+<footer id="footer">
+    <div class="container footer-content">
+        <div class="col">
+            <strong class="title">Support – We're here for you!</strong>
+            <ul class="contact-list">
+                <!--<li><a class="tel" href="tel:92 42 3597 6183">92 42 3597 6183</a></li>-->
+                <li><a class="mail" href="mailto:info@teedesign.ae">info@teedesign.ae</a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <strong class="title">We promise</strong>
+            <ul class="footer-nav">
+                <li>30 Day Exchange Policy</li>
+                <li>Delivery in 3-7 working days</li>
+                <li>High quality printing</li>
+                <li>Cards accepted</li>
+            </ul>
+        </div>
+        <div class="col">
+            <strong class="title">Information</strong>
+            <ul class="footer-nav">
+                <li><a href='{{serverURL}}about' target="_blank">About Us</a></li>
+                <li><a href='{{serverURL}}jobs' target="_blank">Jobs</a></li>
+                <li ng-repeat="page in vm.footer_pages"><a href='{{serverURL}}{{page.url}}' target="_blank">{{page.title}}</a></li>
+                <li><a href='{{serverURL}}faqs' target="_blank">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <strong class="title">Follow us</strong>
+            <ul class="social-networks">
+                <li><a href="{{vm.config.config.facebook_url}}" target="_blank"><i class="icon-facebook-01"></i></a></li>
+                <li><a href="{{vm.config.config.twitter_url}}" target="_blank"><i class="icon-twitter-01"></i></a></li>
+                <li><a href="{{vm.config.config.instagram_url}}" target="_blank"><i class="icon-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="col">
+                <p>&copy; <span id="year"></span> <a href="#">teedesign</a>. All Rights Reserved.</p>
+            </div>
+            <div class="col">
+                <p>Designed & Developed by <a href="http://www.sayahconsulting.com/" target="_blank">Sayah Consulting</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>document.getElementById("year").innerText = new Date().getFullYear();</script>

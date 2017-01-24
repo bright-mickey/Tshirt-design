@@ -1,0 +1,41 @@
+<div class="modal am-fade-and-scale" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;" ng-init="vm.prepare_shirts()">
+    <div class="modal-dialog" style="width: 90%;height: inherit;overflow: auto">
+        <div class="modal-content">
+            <div class="modal-header ng-hide" ng-show="title">
+                <button type="button" class="close" aria-label="Close" ng-click="$hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title ng-binding" ng-bind="title"></h4>
+            </div>
+            <div class="modal-body" style="height:236px;">
+
+                <div class="modal-shirts">
+                    <ul class="">
+                        <li ng-repeat="color in vm.selectedModalShirt.colors_available" ng-click="vm.select_extra_shirt_color(color)" >
+                           
+                            <div class="modal-image-holder">
+                                <div class="color-set" ng-style="{'background-color':color.color}" style="width:20px;height:20px;display:inline-block;border:1px solid black;">  </div>
+                                  <span> <i class="fa fa-check bring-to-center" ng-if="color.selected"> </i> </span>
+                            </div>
+                            
+                        </li>
+
+                    </ul>
+                </div>
+                
+                <div class="row text-center animate-repeat" ng-if="vm.total_color_selected<15" style="margin-top:5%"> 
+                    <h3>
+                    You can add {{15-vm.total_color_selected}} more apperal(s).
+                    </h3>
+                </div>
+                <div class="row text-center animate-repeat" ng-if="vm.total_color_selected==15"  style="margin-top:5%">  
+                    <h3>
+                    You've just hit the maximum limit of apperals, you cannot add anymore apperal.  {{vm.total_color_selected}}
+                    </h3> 
+                </div>
+
+                <div class="row text-center" style="padding:5px;"> <button class="btn btn-primary btn-lg" ng-click="$hide()"> OK </button> </div>
+            </div>
+        </div>
+    </div>
+</div>

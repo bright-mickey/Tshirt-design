@@ -1,0 +1,16 @@
+﻿ <div> 
+
+<div ng-include="'Common/Views/header.html'">  </div>
+    
+    <!--<div ui-view ng-init="vm.loadDefault()">
+        
+         </div>-->
+         <span class="shortcuts" hotkey="{'shift+1':go_create,'shift+2':go_goal,'shift+3':go_desc}"> </span>
+        <div ng-show="target_state == 'home.create'" ui-view="create"></div>
+        <div ng-show="target_state == 'home.goal'"  ui-view="goal" ></div>
+		<div ng-show="target_state == 'home.description'"  ui-view="description" ></div>
+
+
+<div ng-include="'Common/Views/footer.html'">  </div>
+
+</div>

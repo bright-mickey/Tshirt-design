@@ -1,0 +1,51 @@
+{
+  "name": "angular-fontselect",
+  "version": "0.13.3",
+  "authors": [
+    "Hannes Diercks <hannes.diercks@jimdo.com>",
+    "Lasse Diercks <lasse@jimdo.com>",
+    "Joscha Feth <joscha@feth.com>",
+    "Xiphe <hannes.diercks@jimdo.com>",
+    "Karsten Buckstegge <k.buckstegge@gmail.com>",
+    "Christian Meyer <christian.meyer@jimdo.com>",
+    "Ole Michaelis <Ole.Michaelis@googlemail.com>",
+    "Sebastian Eichner <mail@sebastian-eichner.de>",
+    "Hauke Stange <hauke@jimdo.com>",
+    "Tina Umlandt <tina.umlandt@jimdo.com>",
+    "HerrBertling <markus277@gmail.com>"
+  ],
+  "description": "A fontselect directive for AngularJS",
+  "main": [
+    "dist/libs/webfontloader.js",
+    "dist/angular-fontselect.js",
+    "dist/angular-fontselect.css"
+  ],
+  "keywords": [
+    "fonts",
+    "directive",
+    "angular",
+    "webfonts"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "webfontloader": "1.5.8",
+    "lesshat": "3.0.2",
+    "jquery": "2.1.1",
+    "angular-mocks": "^1.2.25 <= 1.4.1",
+    "jasmine-moar-matchers": "~0.0.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "demo",
+    "src",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": "^1.2.25 <= 1.4.1",
+    "weakmap-polyfill": "^1.0.1"
+  }
+}

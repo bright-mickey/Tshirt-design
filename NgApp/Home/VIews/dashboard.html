@@ -1,0 +1,114 @@
+﻿
+
+<nav class="navbar navbar-default" id="custom-nav-bar">
+    <div class="container-fluid">
+        
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a ui-sref="home" class="navbar-brand"><img style="margin-top: -0.8em;" src="images/home.png" width="60" height="60"></a>
+            <a class="navbar-brand" ui-sref="home" style="margin-left: -2em;">Macho Cart</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right" style="z-index:11000;">
+                <!--<li><a href="#">Admin</a></li>-->
+                <li class="dropdown">
+                    <a style=" margin-top: 1.5em; font-size: 0.7em; margin-left: -9.9em;color:black;" class="dropdown-toggle user_icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"> </span>  <span class="caret"></span></a>
+                    <ul class="dropdown-menu" style="z-index:10000">
+                        <li> <a> {{user.username}} </a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a>User Profile</a></li>
+                        <li><a>Setting</a></li>
+                        <!--<li><a href="#">Something else here</a></li>-->
+                        <li role="separator" class="divider"></li>
+                        <li><a ng-click="logOut()">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+</nav>
+
+<nav class="navbar navbar-default" style="display:none;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
+                <li><a href="../navbar-static-top/">Static top</a></li>
+                <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="row">
+    <!-- navbar_all_btns -->
+    <div class="col-sm-10 col-sm-offset-1 menu_bar">
+        <nav class="navbar navbar-default navbar-static-top main-menu">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar_ul">
+
+                        <li><a ui-sref-active='active' class="active" ui-sref="dashboard.home">Home</a></li>
+                        <li><a ui-sref-active='active' ui-sref="dashboard.users">Users</a></li>
+                        <li><a ui-sref-active='active' ui-sref="dashboard.customers">Customers</a></li>
+                        <li><a ui-sref-active='active' ui-sref="dashboard.category">Categories</a></li>
+                        <li><a ui-sref-active='active' ui-sref="dashboard.product">Products</a></li>
+                        <li><a ui-sref-active='active' ui-sref="dashboard.order">Orders</a></li>
+                        <li><a ui-sref-active='active' ui-sref="dashboard.promotion">Promotions</a></li>
+                        <li><a ui-sref-active='active' ui-sref="dashboard.appConfig">App Configuration</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+</div>
+<div class="row custom-side-bar">
+   
+
+    <div class="col-md-10 col-md-offset-1 macho-section">
+        <div ui-view></div>
+    </div>
+</div>
+
+<div class="border-line"></div>
+
+<div class="row footer-section" ng-include="'NgApp/Common/Views/footer.html'">
+
+</div>

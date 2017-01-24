@@ -1,0 +1,31 @@
+
+
+<div class="modal am-fade-and-scale" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog" style="width: 35%;max-height: 600px;overflow: auto">
+        <div class="modal-content">
+           
+            <div class="modal-body" style="font-size: 24px;">
+                
+                <div class="row"> 
+                <div class="col-sm-8"> </div>
+                <div class="col-sm-1 col-sm-offset-3 text-right">
+                <div ng-click="$hide()" style="cursor:pointer;">×</div>
+                 </div>
+                </div>
+                <h4 class="cfp-hotkeys-title_" ng-if="!header">Shortcuts</h4>
+                <div ng-bind-html="header" ng-if="header"></div>
+                <table class="table table-danger">
+                <tbody>
+                <tr ng-repeat="key in short_keys"
+                ><td class="combination"><span class="">{{key.combination}}</span></td>
+                <td class="cfp-hotkeys-text_">{{ key.description }}</td>
+                </tr>
+                </tbody>
+                </table>
+                <div ng-bind-html="footer" ng-if="footer"></div>
+                
+               
+            </div>
+        </div>
+    </div>
+</div> 
